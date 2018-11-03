@@ -1,10 +1,10 @@
-/*import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-Enzyme.configure({ adapter: new Adapter() });*/
 'use strict';
 
 module.exports = {
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy',
+  },
+  setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
   testMatch: ['<rootDir>/**/*.test.js?(x)'],
-  testPathIgnorePatterns: ['node_modules'],
+  testPathIgnorePatterns: ['/src/main/', 'node_modules'],
 };
