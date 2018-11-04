@@ -5,6 +5,6 @@ import { shallow } from 'enzyme';
 describe('Jest Example App', () => {
   it('renders without crashing', () => {
     const renderedComponent = shallow(<App />);
-    expect(renderedComponent.find('.App')).toBeGreaterThan(0);
+    expect(renderedComponent.find('.App').length).toBeGreaterThan(0);
   });
 });

@@ -100,7 +100,7 @@ As of Enzyme 3, you will need to install Enzyme along with an Adapter correspond
 
 The adapter will also need to be configured in your [global setup file](#initializing-test-environment):
 
-### `src/setupTests.js`
+### `src/SetupTests.js`
 
 ```js
 import { configure } from 'enzyme';
@@ -111,7 +111,7 @@ configure({ adapter: new Adapter() });
 
 > Note: When using TypeScript with Babel, all your files need to have at least one export, otherwise you will get the error `Cannot compile namespaces when the '--isolatedModules' flag is provided.`. To fix this, you can add `export default undefined` to `src/setupTests.ts`.
 
-> Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js`, the resulting `package.json` file won't contain any reference to it. [Read here](#initializing-test-environment) to learn how to add this after ejecting.
+> Note: Keep in mind that if you decide to "eject" before creating `src/SetupTests.js`, the resulting `package.json` file won't contain any reference to it. [Read here](#initializing-test-environment) to learn how to add this after ejecting.
 
 Now you can write a smoke test with it:
 
@@ -165,7 +165,7 @@ Alternatively you may use `yarn`:
 yarn add jest-enzyme
 ```
 
-Import it in [`src/setupTests.js`](#initializing-test-environment) to make its matchers available in every test:
+Import it in [`src/SetupTests.js`](#initializing-test-environment) to make its matchers available in every test:
 
 ```js
 import 'jest-enzyme';
@@ -187,7 +187,7 @@ Alternatively you may use `yarn`:
 yarn add react-testing-library jest-dom
 ```
 
-Similar to `enzyme` you can create a `src/setupTests.js` file to avoid boilerplate in your test files:
+Similar to `enzyme` you can create a `src/SetupTests.js` file to avoid boilerplate in your test files:
 
 ```js
 // react-testing-library renders your components to document.body,
@@ -229,11 +229,11 @@ and then use them in your tests like you normally do.
 
 > Note: this feature is available with `react-scripts@0.4.0` and higher.
 
-If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.js` to your project. It will be automatically executed before running your tests.
+If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/SetupTests.js` to your project. It will be automatically executed before running your tests.
 
 For example:
 
-### `src/setupTests.js`
+### `src/SetupTests.js`
 
 ```js
 const localStorageMock = {
@@ -244,12 +244,12 @@ const localStorageMock = {
 global.localStorage = localStorageMock;
 ```
 
-> Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js`, the resulting `package.json` file won't contain any reference to it, so you should manually create the property `setupTestFrameworkScriptFile` in the configuration for Jest, something like the following:
+> Note: Keep in mind that if you decide to "eject" before creating `src/SetupTests.js`, the resulting `package.json` file won't contain any reference to it, so you should manually create the property `setupTestFrameworkScriptFile` in the configuration for Jest, something like the following:
 
 > ```js
 > "jest": {
 >   // ...
->   "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+>   "setupTestFrameworkScriptFile": "<rootDir>/src/SetupTests.js"
 >  }
 > ```
 
