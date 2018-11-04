@@ -25,7 +25,7 @@ class App extends Component {
         state.classes === `${IMG_CLASS} ${IMG_SPIN_CLASS}`
           ? classnames(IMG_CLASS)
           : classnames(IMG_CLASS, IMG_SPIN_CLASS),
-      // image: state.image === neko ? logo : neko
+      image: state.image === neko ? logo : neko,
     }));
   }
 
