@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node react-scripts/bin/react-scripts.js start",
     "build": "react-scripts build",
     "test": "jest --config=src/test/jest.config.js test",
     "eject": "react-scripts eject"
